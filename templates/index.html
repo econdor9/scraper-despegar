@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flights Data</title>
+    <title>Lista de Vuelos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        li:hover {
+            background-color: #e9e9e9;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>Lista de Vuelos</h1>
     <ul>
         {% for flight in flights %}
         <li>
-            <strong>Airline:</strong> {{ flight.airline }}<br>
-            <strong>Departure:</strong> {{ flight.depature }}<br>
-            <strong>Arrival:</strong> {{ flight.arrival }}<br>
-            <strong>Days:</strong> {{ flight.days }}<br>
-            <strong>Price:</strong> {{ flight.price }}<br>
+            <strong>Aerolínea:</strong> {{ flight.airline }}<br>
+            <strong>Salida:</strong> {{ flight.departure }}<br>
+            <strong>Llegada:</strong> {{ flight.arrival }}<br>
+            <strong>Duración:</strong> {{ flight.days }} días<br>
+            <strong>Precio:</strong> ${{ flight.price }}<br>
         </li>
         {% endfor %}
     </ul>
